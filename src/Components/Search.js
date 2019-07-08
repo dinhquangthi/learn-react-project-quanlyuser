@@ -1,16 +1,52 @@
 import React, { Component } from 'react';
 
 class Search extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            tempValue: ''
+        }
+    }
+    
+    hienThiNut = () => {
+        if (this.props.hienThiForm === true) {
+            return <div className="btn btn-block btn-outline-secondary" onClick={() => this.props.ketNoi()} style={{ width: '30%' }} >
+                Đóng lại
+                    </div>
+        } else {
+            return <div className="btn btn-block btn-outline-info" onClick={() => this.props.ketNoi()} style={{ width: '30%' }}>
+                Thêm mới user
+                    </div>
+        }
+    }
+
+    isChange = (event) => {
+        console.log(event.target.value);
+        this.setState({
+            tempValue: event.target.value
+        }
+        );
+        this.props.checkConnectFunction(this.state.tempValue)
+    }
+
     render() {
         return (
             <div className="col-12">
                 <div className="form-group">
                     <div className="btn-group">
-                        <input type="text" className="form-control" placeholder="Nhập từ khóa" style={{ width: '350px' }} />
-                        <div className="btn btn-info">Tìm</div>
+                        <input type="text" className="form-control" placeholder="Nhập từ khóa" style={{ width: '350px' }} 
+                        onChange={(event) => this.isChange(event)}
+                        />
+                        <div className="btn btn-info" 
+                        onClick={(dl) => this.props.checkConnectFunction(this.state.tempValue)}
+                        >Tìm</div>
+
                     </div>
+
+                    {this.hienThiNut()}
+
                 </div>
-                <hr/>
+                <hr />
             </div>
 
         );

@@ -1,0 +1,44 @@
+[
+    {
+        "id" : 1,
+        "name" : "Quang Huy",
+        "tel" : "01929292",
+        "permission" : 1
+    },
+    {
+        "id" : 2,
+        "name" : "Bui Tuan",
+        "tel" : "0383721",
+        "permission" : 2
+    },
+    {
+        "id" : 3,
+        "name" : "Lan Hoa",
+        "tel" : "1219832",
+        "permission" : 3
+    },
+    {
+        "id" : 4,
+        "name" : "Spiderman",
+        "tel" : "01929292",
+        "permission" : 2
+    },
+    {
+        "id" : 5,
+        "name" : "Cong Phuong",
+        "tel" : "0492992",
+        "permission" : 3
+    },
+    {
+        "id" : 6,
+        "name" : "Van Toan",
+        "tel" : "124354",
+        "permission" : 3
+    },
+    {
+        "id" : 7,
+        "name" : "Xuan Truong",
+        "tel" : "09391949",
+        "permission" : 2
+    }
+]

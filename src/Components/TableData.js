@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import TableDataRow from './TableDataRow';
 
 class TableData extends Component {
+    mappingDataUser = () => this.props.dataUserProps.map((value,key) => (
+        <TableDataRow key={key} id={value.id} userName={value.name}  tel={value.tel}
+            permission={value.permission}/>
+       
+        ))
+    
     render() {
         return (
-            <div className="col-9">
+            <div className="col">
                 <table className="table table-striped table-hover">
                     <thead className="thead-inverse">
                         <tr>
@@ -15,86 +22,8 @@ class TableData extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Quang Thi</td>
-                            <td>09052168</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua">
-                                        <i className="fa fa-edit " />Sửa
-            </div>
-                                    <div className="btn btn-danger delete">
-                                        <i className="fa fa-edit " />Xóa
-            </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >1</td>
-                            <td>Quang Thi</td>
-                            <td>09052168</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua">
-                                        <i className="fa fa-edit " />Sửa
-            </div>
-                                    <div className="btn btn-danger delete">
-                                        <i className="fa fa-edit " />Xóa
-            </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >1</td>
-                            <td>Quang Thi</td>
-                            <td>09052168</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua">
-                                        <i className="fa fa-edit " />Sửa
-            </div>
-                                    <div className="btn btn-danger delete">
-                                        <i className="fa fa-edit " />Xóa
-            </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >1</td>
-                            <td>Quang Thi</td>
-                            <td>09052168</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua">
-                                        <i className="fa fa-edit " />Sửa
-            </div>
-                                    <div className="btn btn-danger delete">
-                                        <i className="fa fa-edit " />Xóa
-            </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td >1</td>
-                            <td>Quang Thi</td>
-                            <td>09052168</td>
-                            <td>Moderator</td>
-                            <td>
-                                <div className="btn-group">
-                                    <div className="btn btn-warning sua">
-                                        <i className="fa fa-edit " />Sửa
-            </div>
-                                    <div className="btn btn-danger delete">
-                                        <i className="fa fa-edit " />Xóa
-            </div>
-                                </div>
-                            </td>
-                        </tr>
+                            {this.mappingDataUser()}   
+                        
                     </tbody>
                 </table>
             </div>
