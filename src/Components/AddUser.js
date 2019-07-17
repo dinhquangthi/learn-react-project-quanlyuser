@@ -46,32 +46,57 @@ class AddUser extends Component {
     //         </div>)
     //     } 
     // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            id : "",
+            name : "",
+            tel : "",
+            permission : ""
+        }
+    }
+    
+    isChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
     kiemTraTrangThai = () => {
         if(this.props.hienThiForm === true){
             return (
                 <div className="col">
+                    <form>   
                 <div className="card-body">
                     <div className="form-group">
-                        <input type="text" className="form-control" placeholder="Tên user" />
+                        <input type="text" name ="name" className="form-control" placeholder="Tên user" 
+                        onChange ={ (event) => this.isChange(event)}/>
                     </div>
                     <div className="form-group">
-                        <input type="text" className="form-control" placeholder="Điện thoại" />
+                        <input type="text" name = "tel" className="form-control" placeholder="Điện thoại" 
+                                onChange={(event) => this.isChange(event)}/>
                     </div>
                     <div className="form-group">
-                        <select className="form-control">
+                            <select className="form-control" name="permission" onChange={(event) => this.isChange(event)}>
                             <option value>Chọn quyền</option>
                             <option value={1}>Admin</option>
                             <option value={2}>User</option>
                         </select>
                     </div>
                     <div className="form-group">
-                        <div className="btn btn-block btn-primary">Thêm mới</div>
+                        <input type="reset" className="btn btn-block btn-primary" 
+                        onClick={(name,tel,permission) => this.props.add(this.state.name, this.state.tel, this.state.permission)} value="Thêm mới"/>
                     </div>
                 </div>
+                    </form>
                 </div>
             )
         }
     }
+ 
     // -------------------------------
     render() {
         return (
